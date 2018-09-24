@@ -1,0 +1,48 @@
+---
+title: "Homework"
+author: "Pablo Vargas"
+date: "24 de septiembre de 2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## log-normal Sampler
+
+1. Sample 100 values from a log-normal distribution into vector _sample_:
+* **mean**: 1
+* **SD**: 0.25
+
+```{r sampler}
+sample <- c(rlnorm(100, meanlog = 1, sdlog = 0.25))
+```
+
+Vector _sample_ contains now 100 values taken (pseudo)randomly.
+
+2. Plot the histogram.
+
+###log-normal data
+```{r hisogram, echo = FALSE}
+hist(sample)
+```
+
+The histogram shows the frequencies of data.
+
+3. Plot a density distribution
+
+###log-normal data
+```{r distribution , echo = FALSE}
+plot(density(log(sample)), log = "x", main = "Density distribution", sub = "log-scale")
+```
+
+4. Mean  
+`r mean(sample)`
+
+
+5. Variance  
+`r var(sample)`
+
